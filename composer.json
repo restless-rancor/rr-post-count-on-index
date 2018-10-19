@@ -3,8 +3,8 @@
     "type": "phpbb-extension",
     "description": "Displays a logged in member their post count on the index page",
     "homepage": "https://www.restlessrancor.com",
-    "version": "0.0.1-dev",
-    "time": "2018-10-18",
+    "version": "0.0.2-dev",
+    "time": "2018-10-19",
     "license": "GPL-2.0-only",
     "authors": [
         {

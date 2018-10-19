@@ -1,0 +1,9 @@
+.headerspace,
+.postcountonindex-block ~ .action-bar {
+	display: none;
+}
+
+.postcountonindex-block {
+	font-size: 11px;
+	margin: 4px 0;
+}
