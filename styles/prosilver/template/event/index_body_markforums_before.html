@@ -1,0 +1,9 @@
+<div class="action-bar compact">
+	{% if S_REGISTERED_USER %}
+		{% if USER_POST_COUNT == '1' %}
+				<a href="search.php?author_id={S_USER_ID}&sr=posts" class="mark-read leftside" title="search your posts">You have {USER_POST_COUNT} post!</a>
+			{% else %}
+				<a href="search.php?author_id={S_USER_ID}&sr=posts" class="mark-read leftside" title="search your posts">You have {USER_POST_COUNT} posts!</a>
+		{% endif %}
+	{% endif %}
+</div>

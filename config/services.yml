@@ -1,0 +1,8 @@
+services:
+    restlessrancor.postcountonindex.listener:
+        class: restlessrancor\postcountonindex\event\main_listener
+        arguments:
+            - '@user'
+            - '@template'
+        tags:
+            - { name: event.listener }
