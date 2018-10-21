@@ -3,7 +3,11 @@
     "type": "phpbb-extension",
     "description": "Displays a logged in member their post count on the index page",
     "homepage": "https://www.restlessrancor.com",
+<<<<<<< HEAD
     "version": "0.1.2-dev",
+=======
+    "version": "0.1.1-dev",
+>>>>>>> 348670aefcd40d49ad64d075229e34fd8d4025d6
     "time": "2018-10-19",
     "license": "GPL-2.0-only",
     "authors": [{
