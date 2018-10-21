@@ -1,12 +1,6 @@
 {% if U_MARK_FORUMS %}
-	<div class="pcoi-container postcountonindex-block">
+	<div class="postcountonindex-container postcountonindex-block">
 		<a href="{U_MARK_FORUMS}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{L_MARK_FORUMS_READ}</a>
-		{% if S_REGISTERED_USER %}
-			{% if USER_POST_COUNT == '1' %}
-				<a href="search.php?author_id={S_USER_ID}&sr=posts" class="mark-read leftside" title="Search your posts">{L_PCOI_PREFIX} {USER_POST_COUNT} {L_PCOI_SINGULAR}</a>
-				{% else %}
-				<a href="search.php?author_id={S_USER_ID}&sr=posts" class="mark-read leftside" title="Search your posts">{L_PCOI_PREFIX} {USER_POST_COUNT} {L_PCOI_SUFFIX}</a>
-			{% endif %}
-		{% endif %}
+		<a href="search.php?author_id={{ S_USER_ID }}&sr=posts" class="mark-read leftside" title="Search your posts">{{ lang(USER_POST_COUNT) }}</a>
 	</div>
 {% endif %}

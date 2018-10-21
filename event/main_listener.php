@@ -12,17 +12,20 @@ namespace restlessrancor\postcountonindex\event;
 
 use phpbb\user;
 use phpbb\template\twig\twig;
+use phpbb\language\language;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class main_listener implements EventSubscriberInterface
 {
     protected $user;
     protected $template;
+	protected $language;
 
-    public function __construct(user $user, twig $template)
+    public function __construct(user $user, twig $template, language $language)
     {
         $this->user = $user;
         $this->template = $template;
+		$this->language = $language;
     }
 
     public static function getSubscribedEvents()
@@ -38,16 +41,17 @@ class main_listener implements EventSubscriberInterface
 		$lang_set_ext = $event['lang_set_ext'];
 		$lang_set_ext[] = array(
 			'ext_name' => 'restlessrancor/postcountonindex',
-			'lang_set' => 'postcountonindex',
+			'lang_set' => 'common',
 		);
 		$event['lang_set_ext'] = $lang_set_ext;
 	}
 
 	public function pcoi_header()
-	{				
+	{
+		$posts = (int) $this->user->data['user_posts'];		
 		$this->template->assign_vars([
 			'S_USER_ID'		=> $this->user->data['user_id'],
-			'USER_POST_COUNT' => $this->user->data['user_posts'],
+			'USER_POST_COUNT' => $this->language->lang('USER_POSTS', $posts),
 		]);
 	}
 }

@@ -10,7 +10,9 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'PCOI_PREFIX'	=> 'You have',
-	'PCOI_SINGULAR'	=> 'post',
-	'PCOI_SUFFIX'	=> 'posts!',
+	'USER_POSTS'	=> array(
+		0	=> 'You don’t have any posts.',
+		1	=> 'You have %d post.',
+		2	=> 'You have %d posts!',
+	),
 ));
