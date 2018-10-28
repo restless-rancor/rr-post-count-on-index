@@ -1,6 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 
-<h1>{L_PCOI_TITLE}</h1>
+<h1>{{ lang('PCOI_TITLE') }}</h1>
 
 <form id="acp_board" method="post" action="{U_ACTION}">
 
@@ -8,11 +8,38 @@
 		<legend>{{ lang('SETTINGS') }}</legend>
 		<dl>
 			<dt>
-				<label for="require_activation">{{ lang('PCOI_ENABLE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('PCOI_ENABLE_EXPLAIN') }}</span>
+				<label for="pcoi_enable">{{ lang('PCOI_ENABLE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('PCOI_ENABLE_EXPLAIN') }}</span>
 			</dt>
 			<dd>
 				<label><input type="radio" name="pcoi_enable" value="1"{% if PCOI_ENABLE %} checked{% endif %}> {{ lang('YES') }}</label>
 				<label><input type="radio" name="pcoi_enable" value="0"{% if not PCOI_ENABLE %} checked{% endif %}> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="pcoi_enable">{{ lang('PCOI_NAVBAR') }}{{ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" name="pcoi_navbar" value="1"{% if PCOI_NAVBAR %} checked{% endif %}> {{ lang('YES') }}</label>
+				<label><input type="radio" name="pcoi_navbar" value="0"{% if not PCOI_NAVBAR %} checked{% endif %}> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="pcoi_enable">{{ lang('PCOI_FORUMLIST') }}{{ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" name="pcoi_forumlist" value="1"{% if PCOI_FORUMLIST %} checked{% endif %}> {{ lang('YES') }}</label>
+				<label><input type="radio" name="pcoi_forumlist" value="0"{% if not PCOI_FORUMLIST %} checked{% endif %}> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="pcoi_enable">{{ lang('PCOI_STATISTICS') }}{{ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" name="pcoi_statistics" value="1"{% if PCOI_STATISTICS %} checked{% endif %}> {{ lang('YES') }}</label>
+				<label><input type="radio" name="pcoi_statistics" value="0"{% if not PCOI_STATISTICS %} checked{% endif %}> {{ lang('NO') }}</label>
 			</dd>
 		</dl>
 	</fieldset>

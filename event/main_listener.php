@@ -43,9 +43,12 @@ class main_listener implements EventSubscriberInterface
 		$this->language->add_lang('common', 'restlessrancor/postcountonindex'); 
 		$posts = (int) $this->user->data['user_posts'];		
 		$this->template->assign_vars(array(
-			'S_USER_ID'		=> $this->user->data['user_id'],
-			'USER_POST_COUNT' => $this->language->lang('USER_POSTS', $posts),
-			'S_PCOI_ENABLE'	=> $this->config['pcoi_enable'] ? true : false,
+			'S_USER_ID'			=> $this->user->data['user_id'],
+			'USER_POST_COUNT' 	=> $this->language->lang('USER_POSTS', $posts),
+			'S_PCOI_ENABLE'		=> $this->config['pcoi_enable'] ? true : false,
+			'S_PCOI_NAVBAR'		=> $this->config['pcoi_navbar'] ? true : false,
+			'S_PCOI_FORUMLIST'	=> $this->config['pcoi_forumlist'] ? true : false,
+			'S_PCOI_STATISTICS'	=> $this->config['pcoi_statistics'] ? true : false,
 		));
 	}
 }
