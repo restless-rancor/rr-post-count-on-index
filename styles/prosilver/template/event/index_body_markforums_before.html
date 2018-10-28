@@ -1,6 +1,6 @@
-{% if U_MARK_FORUMS %}
+{% if S_PCOI_ENABLE %}
 	<div class="postcountonindex-container postcountonindex-block">
-		<a href="{U_MARK_FORUMS}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{L_MARK_FORUMS_READ}</a>
+		{% if U_MARK_FORUMS %}<a href="{U_MARK_FORUMS}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{L_MARK_FORUMS_READ}</a>{% endif %}
 		<a href="search.php?author_id={{ S_USER_ID }}&sr=posts" class="mark-read leftside" title="Search your posts">{{ lang(USER_POST_COUNT) }}</a>
 	</div>
 {% endif %}

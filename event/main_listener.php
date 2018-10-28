@@ -10,9 +10,6 @@
 
 namespace restlessrancor\postcountonindex\event;
 
-use phpbb\user;
-use phpbb\template\twig\twig;
-use phpbb\language\language;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class main_listener implements EventSubscriberInterface
@@ -20,12 +17,18 @@ class main_listener implements EventSubscriberInterface
     protected $user;
     protected $template;
 	protected $language;
+	protected $config;
 
-    public function __construct(user $user, twig $template, language $language)
+    public function __construct(
+		\phpbb\user $user, 
+		\phpbb\template\twig\twig $template, 
+		\phpbb\language\language $language,
+		\phpbb\config\config $config)
     {
         $this->user = $user;
         $this->template = $template;
 		$this->language = $language;
+		$this->config = $config;
     }
 
     public static function getSubscribedEvents()
@@ -39,9 +42,10 @@ class main_listener implements EventSubscriberInterface
 	{
 		$this->language->add_lang('common', 'restlessrancor/postcountonindex'); 
 		$posts = (int) $this->user->data['user_posts'];		
-		$this->template->assign_vars([
+		$this->template->assign_vars(array(
 			'S_USER_ID'		=> $this->user->data['user_id'],
 			'USER_POST_COUNT' => $this->language->lang('USER_POSTS', $posts),
-		]);
+			'S_PCOI_ENABLE'	=> $this->config['pcoi_enable'] ? true : false,
+		));
 	}
 }
