@@ -1,5 +1,5 @@
-{% if S_PCOI_ENABLE and S_PCOI_NAVBAR %}
+{% if S_PCOI_NAVBAR %}
 	<a href="search.php?author_id={{ S_USER_ID }}&sr=posts" class="mark-read leftside" title="Search your posts">
-		<i class="icon fa-hashtag aria-hidden="true"></i><span> {{ lang(USER_POST_COUNT) }}</span>
+		<i class="icon fa-hashtag aria-hidden="true"></i><span> {{  S_USER_POST_COUNT }}</span>
 	</a>
 {% endif %}

@@ -1,12 +1,12 @@
 <?php
 /**
- *
- * Post Count on Index. An extension for the phpBB Forum Software package.
- *
- * @copyright (c) 2018, Restless Rancor, https://www.restlessrancor.com
- * @license GNU General Public License, version 2 (GPL-2.0)
- *
- */
+*
+* Post Count on Index. An extension for the phpBB Forum Software package.
+*
+* @copyright (c) 2018, Restless Rancor, https://www.restlessrancor.com
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+*/
 
 namespace restlessrancor\postcountonindex\event;
 
@@ -31,7 +31,7 @@ class main_listener implements EventSubscriberInterface
 		$this->config = $config;
     }
 
-    public static function getSubscribedEvents()
+    static public function getSubscribedEvents()
     {
         return array(
             'core.page_header_after'	=> 'pcoi_header',
@@ -44,8 +44,7 @@ class main_listener implements EventSubscriberInterface
 		$posts = (int) $this->user->data['user_posts'];		
 		$this->template->assign_vars(array(
 			'S_USER_ID'			=> $this->user->data['user_id'],
-			'USER_POST_COUNT' 	=> $this->language->lang('USER_POSTS', $posts),
-			'S_PCOI_ENABLE'		=> $this->config['pcoi_enable'] ? true : false,
+			'S_USER_POST_COUNT' 	=> $this->language->lang('USER_POSTS', $posts),
 			'S_PCOI_NAVBAR'		=> $this->config['pcoi_navbar'] ? true : false,
 			'S_PCOI_FORUMLIST'	=> $this->config['pcoi_forumlist'] ? true : false,
 			'S_PCOI_STATISTICS'	=> $this->config['pcoi_statistics'] ? true : false,

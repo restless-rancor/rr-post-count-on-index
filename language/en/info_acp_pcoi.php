@@ -1,12 +1,12 @@
 <?php
 /**
- *
- * Post Count on Index. An extension for the phpBB Forum Software package.
- *
- * @copyright (c) 2018, Restless Rancor, https://www.restlessrancor.com
- * @license GNU General Public License, version 2 (GPL-2.0)
- *
- */
+*
+* Post Count on Index. An extension for the phpBB Forum Software package.
+*
+* @copyright (c) 2018, Restless Rancor, https://www.restlessrancor.com
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+*/
 
 if (!defined('IN_PHPBB'))
 {
@@ -26,7 +26,6 @@ $lang = array_merge($lang, array(
 	'PCOI_SAVED'			=> 'Settings have been saved successfully!.',
 	'PCOI_UPDATED'			=> 'Updated Post Count on Index configuration.',
 	
-	'PCOI_ENABLE'			=> 'Enable Post Count on Index',
 	'PCOI_ENABLE_EXPLAIN'	=> 'If disabled, post count will <strong>not</strong> display in the location chosen below.',
 	'PCOI_NAVBAR'			=> 'Display in <em>navbar?</em>',
 	'PCOI_FORUMLIST'		=> 'Diplsay above <em>forumlist?</em>',

@@ -1,6 +1,6 @@
-{% if S_PCOI_ENABLE and S_PCOI_FORUMLIST %}
+{% if S_PCOI_FORUMLIST %}
 	<div class="postcountonindex-container postcountonindex-block">
-		{% if U_MARK_FORUMS %}<a href="{U_MARK_FORUMS}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{L_MARK_FORUMS_READ}</a>{% endif %}
-		<a href="search.php?author_id={{ S_USER_ID }}&sr=posts" class="mark-read leftside" title="Search your posts">{{ lang(USER_POST_COUNT) }}</a>
+		{% if U_MARK_FORUMS %}<a href="{{ U_MARK_FORUMS }}" class="mark-read rightside" accesskey="m" data-ajax="mark_forums_read">{{ lang('MARK_FORUMS_READ') }}</a>{% endif %}
+		<a href="search.php?author_id={{ S_USER_ID }}&sr=posts" class="mark-read leftside" title="Search your posts">{{ S_USER_POST_COUNT }}</a>
 	</div>
 {% endif %}
